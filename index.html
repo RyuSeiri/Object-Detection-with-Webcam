@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mobile Dog Detector</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.17.0/dist/tf.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3/dist/coco-ssd.min.js"></script>
+
+    <style>
+      #camera-stream {
+        width: 200px;
+        height: auto;
+      }
+      #name {
+        height: 200px;
+        overflow-y: auto;
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <video id="camera-stream" autoplay playsinline></video>
+    <div id="name" style="height: 200px"></div>
+
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
