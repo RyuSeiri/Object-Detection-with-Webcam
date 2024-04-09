@@ -11,8 +11,8 @@ async function init() {
 
 async function startCamera() {
   const stream = await navigator.mediaDevices.getUserMedia({
-    // video: { facingMode: "environment" }, // Rear camera
-    video: { facingMode: "user" }, // Front camera
+    video: { facingMode: "environment" }, // Rear camera
+    // video: { facingMode: "user" }, // Front camera
   });
   const nameContainer = document.getElementById("name");
   const videoElement = document.getElementById("camera-stream");
