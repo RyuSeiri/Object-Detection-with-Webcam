@@ -11,13 +11,14 @@ async function init() {
 
 async function startCamera() {
   const stream = await navigator.mediaDevices.getUserMedia({
-    video: { facingMode: "environment" }, // Rear camera
+    // video: { facingMode: "environment" }, // Rear camera
     // video: { facingMode: "user" }, // Front camera
+    video: true,
+    audio: false,
   });
   const nameContainer = document.getElementById("name");
   const videoElement = document.getElementById("camera-stream");
   videoElement.srcObject = stream;
-
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
 
@@ -36,7 +37,7 @@ async function startCamera() {
       const predictions = await obj.detect(imageData);
       for (const prediction of predictions) {
         predictionClasses += `${prediction.class}\n`;
-        if (prediction.class === "people") {
+        if (prediction.class === "person") {
           // Play Music
           playMusicSound();
         }
